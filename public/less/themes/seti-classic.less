@@ -1,0 +1,1553 @@
+/*
+seti-classic theme file for gitea.
+*/
+
+@import "_base";
+
+// VARS (theme base16-seti-classic.mintty)
+@black:         #151718;
+@boldblack:     #41535b;
+@red:           #CD3F45;
+@boldred:       #FF7278;
+@green:         #9FCA56;
+@boldgreen:     #D2FD89;
+@yellow:        #E6CD69;
+@boldyellow:    #FFFF9C;
+@blue:          #55B5DB;
+@boldblue:      #88E8FF;
+@magenta:       #A074C4;
+@boldmagenta:   #D3A7F7;
+@cyan:          #55DBBE;
+@boldcyan:      #88FFF1;
+@white:         #D4D6D7;
+@boldwhite:     #FFFFFF;
+
+@text-color: @white;
+
+@background-color-1: @black;
+@background-color-2: #1D1F21;
+@background-color-3: #101112;
+@background-color-4: #191B1C;
+@background-color-5: #0F1313;
+
+@text-color-info: @blue;
+@text-color-success: @green;
+@text-color-warning: @yellow;
+@text-color-error: @red;
+
+@ui-site-color-1: @blue;
+@ui-site-color-2: @green;
+@ui-site-color-3: @magenta;
+@ui-site-color-4: @red;
+@ui-site-color-5: @yellow;
+
+@heatmap-min: rgba(85,181,219,0.05);
+@heatmap-max: @boldblue;
+@heatmap-color: @blue;
+
+@bg-default: @background-color-1;
+@fg-default: @white;
+
+@hsjs-background-color: @background-color-4;
+@hsjs-gutter-background: @background-color-5;
+
+/* I like my heatmap to be Dark => Light */
+.heatmap-color-0 {
+    background-color: @heatmap-min;
+}
+
+.heatmap-color-1 {
+    background-color: fade(@heatmap-color, 25);
+}
+
+.heatmap-color-2 {
+    background-color: fade(@heatmap-color, 50);
+}
+
+.heatmap-color-3 {
+    background-color: fade(@heatmap-color, 75);
+}
+
+.heatmap-color-4 {
+    background-color: @heatmap-color;
+}
+
+.heatmap-color-5 {
+    background-color: @heatmap-max;
+}
+
+.repository .ui.segment.sub-menu .list .item a {
+    color: @white !important;
+}
+
+.ui.horizontal.segments > .segment {
+    background-color: @background-color-2;
+    border-left: none !important;
+}
+
+body {
+    background: @background-color-3;
+    color: @white;
+}
+
+a {
+    color: @blue;
+}
+
+a:hover {
+    color: @boldblue;
+}
+
+.ui.card > .extra a:not(.ui):hover,
+.ui.cards > .card > .extra a:not(.ui):hover {
+    color: @boldblue;
+}
+
+.ui.breadcrumb a:hover {
+    color: @boldblue;
+}
+
+.ui.breadcrumb a {
+    color: @blue;
+}
+
+.repository .metas .ui.list a .text {
+    color: @blue;
+}
+
+.repository .metas .ui.list a .text:hover {
+    color: @boldblue;
+}
+
+.repository .label.list .item a {
+    color: @blue;
+}
+
+.repository .label.list .item a:hover {
+    color: @boldblue;
+}
+
+.repository .milestone.list > .item > a {
+    color: @blue;
+}
+
+.repository .milestone.list > .item > a:hover {
+    color: @boldblue;
+}
+
+.repository.release #release-list {
+    border-top: 1px solid @boldblack;
+}
+
+.repository .milestone.list > .item .operate > a {
+    color: @blue;
+}
+
+.repository .milestone.list > .item .operate > a:hover {
+    color: @boldblue;
+}
+
+.ui.green.progress .bar {
+    background-color: @green;
+}
+
+.ui.progress.success .bar {
+    background-color: @green !important;
+}
+
+.following.bar.light {
+    background: @black;
+    border-bottom: 1px solid @background-color-3;
+}
+
+.ui.secondary.menu .active.item {
+    color: @white;
+}
+
+.ui.secondary.menu .item {
+    color: @white;
+}
+
+.following.bar .top.menu a.item:hover {
+    color: @boldwhite;
+}
+
+.repository.view.issue .comment-list .comment .content > .bottom.segment a {
+    border: solid 1px @background-color-4;
+    background-color: @black;
+}
+
+.ui.attached.header {
+    background: @black;
+    border: 1px solid @black;
+    color: @white;
+}
+
+.ui.attached.table {
+    border: 1px solid @black;
+    background: @boldblack;
+}
+
+.feeds .list ul li {
+    background: @background-color-4;
+}
+
+.feeds .list ul li:not(:last-child) {
+    border-bottom: 1px solid @background-color-3;
+}
+
+.feeds .list ul li.private {
+    background: @background-color-4;
+    border: none;
+    border-bottom: 1px solid @background-color-3;
+}
+
+.ui.secondary.menu .dropdown.item:hover,
+.ui.secondary.menu .link.item:hover,
+.ui.secondary.menu a.item:hover {
+    color: @blue;
+}
+
+.ui.menu .ui.dropdown .menu > .item {
+    background: @background-color-2 !important;
+    color: @white !important;
+}
+
+.ui.dropdown .menu .active.item {
+    color: @boldwhite !important;
+}
+
+.ui.secondary.menu .dropdown.item > .menu,
+.ui.text.menu .dropdown.item > .menu {
+    border: 1px solid @background-color-3;
+}
+
+footer {
+    background: @black;
+    border-top: 1px solid @background-color-4;
+}
+
+.ui.menu .dropdown.item .menu {
+    background: @background-color-2;
+}
+
+.ui.menu .ui.dropdown .menu > .item:hover,
+.ui.menu .ui.dropdown .menu > .selected.item {
+    color: @white !important;
+}
+
+.ui.dropdown .menu > .header {
+    color: @white;
+}
+
+.ui.red.label,
+.ui.red.labels .label {
+    background-color: @red !important;
+    border-color: @red !important;
+}
+
+.ui.menu {
+    background: @black;
+    border: 1px solid @black;
+}
+
+.ui.menu .active.item:hover,
+.ui.vertical.menu .active.item:hover {
+    color: @white;
+    background: @black;
+}
+
+.ui.link.menu .item:hover,
+.ui.menu .dropdown.item:hover,
+.ui.menu .link.item:hover,
+.ui.menu a.item:hover {
+    color: @white;
+    background: @black;
+}
+
+.ui.menu .active.item {
+    background: @black;
+    color: @white;
+}
+
+.ui.input input {
+    background: @black;
+    border: 1px solid @background-color-3;
+    color: @white;
+}
+
+.ui.input input:focus,
+.ui.input.focus input {
+    background: @black;
+    border: 1px solid @background-color-3;
+    color: @white;
+}
+
+.ui.accordion .title:not(.ui) {
+    color: @white;
+}
+
+.ui.label {
+    color: @white;
+    background-color: @black;
+}
+
+.issue.list > .item .title {
+    color: @blue;
+}
+
+.issue.list > .item .title:hover {
+    color: @boldblue;
+}
+
+.issue.list > .item {
+    border-bottom: 1px dashed @boldblack;
+}
+
+.ui.basic.green.label,
+.ui.green.label,
+.ui.green.labels .label {
+    background-color: @black !important;
+    color: @green !important;
+    border-color: @green !important;
+}
+
+.ui.basic.green.labels a.label:hover,
+a.ui.basic.green.label:hover {
+    background-color: @black !important;
+    border-color: @boldgreen !important;
+    color: @boldgreen !important;
+}
+
+.issue.list > .item .comment {
+    color: @yellow;
+}
+
+.ui.basic.button,
+.ui.basic.buttons .button {
+    background: @background-color-4 !important;
+    color: @white !important;
+}
+
+.ui.basic.red.active.button,
+.ui.basic.red.buttons .active.button {
+    box-shadow: 0 0 0 1px @red inset !important;
+    color: @red !important;
+}
+
+.ui.basic.button:focus,
+.ui.basic.button:hover,
+.ui.basic.buttons .button:focus,
+.ui.basic.buttons .button:hover {
+    background: @background-color-2 !important;
+    color: @white !important;
+}
+
+.ui.menu .item {
+    background: @background-color-4;
+    color: @white;
+}
+
+.ui.menu .item.disabled,
+.ui.menu .item.disabled:hover {
+    color: @boldblack;
+}
+
+.ui.pagination.menu .active.item {
+    color: @white;
+    background-color: @blue;
+}
+
+.repository .header-wrapper {
+    background-color: @background-color-5;
+}
+
+.ui.tabular.menu .active.item {
+    background: @background-color-3;
+    color: @white;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-top: 0;
+}
+
+.ui.tabular.menu .item {
+    color: @white;
+}
+
+.ui.tabular.menu .item:hover {
+    color: @white;
+}
+
+.ui.breadcrumb .divider,
+.ui.header {
+    color: @white;
+}
+
+.ui.blue.label,
+.ui.blue.labels .label {
+    background-color: @blue !important;
+    border-color: @blue !important;
+}
+
+.ui.menu .item > .label {
+    background: @boldblack;
+}
+
+.ui.blue.button,
+.ui.blue.buttons .button {
+    background-color: @blue;
+}
+
+.ui.blue.button:hover,
+.ui.blue.buttons .button:hover {
+    background-color: @boldblue;
+}
+
+.ui.form input:not([type]),
+.ui.form input[type="text"],
+.ui.form input[type="email"],
+.ui.form input[type="search"],
+.ui.form input[type="password"],
+.ui.form input[type="date"],
+.ui.form input[type="datetime-local"],
+.ui.form input[type="tel"],
+.ui.form input[type="time"],
+.ui.form input[type="url"],
+.ui.form input[type="number"],
+.ui.form input[type="file"] {
+    color: @white;
+    background: @black;
+    border: 1px solid @background-color-2;
+}
+
+.ui.form input:not([type]):focus,
+.ui.form input[type="text"]:focus,
+.ui.form input[type="email"]:focus,
+.ui.form input[type="search"]:focus,
+.ui.form input[type="password"]:focus,
+.ui.form input[type="date"]:focus,
+.ui.form input[type="datetime-local"]:focus,
+.ui.form input[type="tel"]:focus,
+.ui.form input[type="time"]:focus,
+.ui.form input[type="url"]:focus,
+.ui.form input[type="number"]:focus,
+.ui.form input[type="file"]:focus {
+    background: @black;
+    border: 1px solid @background-color-4;
+    color: @white;
+}
+
+.ui.action.input:not([class*="left action"]) input:focus {
+    border-right-color: @background-color-4 !important;
+}
+
+.ui.green.button,
+.ui.green.buttons .button {
+    background-color: @blue;
+    color: @boldwhite;
+}
+
+.ui.green.button:hover,
+.ui.green.buttons .button:hover {
+    background-color: @boldblue;
+    color: @boldwhite;
+}
+
+.ui.purple.label,
+.ui.purple.labels .label {
+    background-color: @magenta;
+    border: 1px solid @magenta;
+    color: @boldwhite;
+}
+
+.ui.button {
+    background: @background-color-3;
+    border: 1px solid @black;
+    color: @white;
+}
+
+.ui.labeled.button:not([class*="left labeled"]) > .label,
+.ui[class*="left labeled"].button > .button {
+    background: @background-color-3;
+    border: 1px solid @black;
+    color: @blue;
+}
+
+.ui.button:hover {
+    background-color: @background-color-4;
+    color: @white;
+}
+
+.ui.table thead th {
+    background: @black;
+    color: @white;
+}
+
+.ui.table {
+    color: @white !important;
+    border: 1px solid @background-color-5;
+    background: @black;
+}
+
+// .ui.table tbody tr {
+//     border-bottom: 1px solid @background-color-5;
+//     background: @black;
+// }
+
+.ui .text.grey {
+    color: @boldblack !important;
+}
+
+.ui.attached.table.segment {
+    background: @background-color-4;
+    color: @white !important;
+}
+
+.markdown:not(code) h2 {
+    border-bottom: 1px solid @boldblack;
+}
+
+.markdown:not(code) .highlight pre,
+.markdown:not(code) pre {
+    background-color: @black;
+    border: 1px solid @background-color-5;
+}
+
+.markdown:not(code) table tr:nth-child(2n) {
+    background-color: @boldblack;
+}
+
+.ui.dropdown .menu {
+    background: @background-color-4;
+}
+
+.ui.dropdown .menu > .message:not(.ui) {
+    color: @boldblack;
+}
+
+.ui.input {
+    color: @white;
+}
+
+.overflow.menu .items .item {
+    color: @boldblack;
+}
+
+.overflow.menu .items .item:hover {
+    color: @white;
+}
+
+.ui.segment {
+    background: @background-color-2;
+    color: @white !important;
+    border: 1px solid @black;
+}
+
+.ui.active.button:active,
+.ui.button:active,
+.ui.button:focus {
+    background-color: @background-color-4;
+    color: @white;
+}
+
+.ui.dropdown .menu .selected.item,
+.ui.dropdown.selected {
+    color: @white;
+}
+
+.ui.dropdown .menu > .item:hover {
+    color: @white;
+}
+
+.ui.dropdown .menu > .item {
+    color: @white;
+}
+
+.ui.attached.segment {
+    border: 1px solid @black;
+}
+
+.repository.view.issue .comment-list .comment .content > .bottom.segment {
+    background: @boldblack;
+}
+
+.repository.view.issue .comment-list .comment .content .header {
+    color: @white;
+    background-color: @background-color-4;
+    border-bottom: 1px solid @background-color-4;
+}
+
+.ui.comments .comment .actions a {
+    color: @blue;
+}
+
+.ui.comments .comment .actions a:hover {
+    color: @boldblue;
+}
+
+.repository.view.issue .comment-list .comment .content .header:after {
+    border-right-color: @background-color-4;
+}
+
+.repository.new.issue .comment.form .content:after {
+    border-right-color: @background-color-4;
+}
+
+.repository.view.issue .comment-list .comment .content .header:before {
+    border-right-color: @background-color-4;
+}
+
+.repository.new.issue .comment.form .content:before {
+    border-right-color: @background-color-4;
+}
+
+.repository.view.issue .comment-list:before {
+    background-color: @background-color-4;
+}
+
+.repository .comment.form .content .form:after {
+    border-right-color: @background-color-4;
+}
+
+.repository .comment.form .content .form:before {
+    border-right-color: @background-color-4;
+}
+
+.ui .text.grey a {
+    color: @white !important;
+}
+
+.ui .text.grey a:hover {
+    color: @white !important;
+}
+
+.ui.basic.green.active.button,
+.ui.basic.green.buttons .active.button {
+    color: @green !important;
+    -webkit-box-shadow: 0 0 0 1px @green inset !important;
+    box-shadow: 0 0 0 1px @green inset !important;
+}
+
+.ui.form textarea,
+.ui.form textarea:focus {
+    background: @background-color-4;
+    border: 1px solid @black;
+    color: @white;
+}
+
+.ui .info.segment.top {
+    background-color: @black !important;
+}
+
+.repository .diff-file-box .code-diff-unified tbody tr.del-code td {
+    background-color: #3c2626 !important;
+    border-color: #634343 !important;
+}
+
+.repository .diff-file-box .code-diff-unified tbody tr.add-code td {
+    background-color: #283e2d !important;
+    border-color: #314a37 !important;
+}
+
+.repository .diff-file-box .code-diff tbody tr .added-code {
+    background-color: inherit;
+}
+
+.repository .diff-file-box .code-diff .lines-num {
+    border-right: 1px solid @background-color-5;
+    border-left-color: @black !important;
+}
+
+.repository .diff-file-box .file-body.file-code .lines-num {
+    color: @white;
+    background: @black;
+}
+
+.repository .diff-file-box .file-body.file-code .lines-num-old {
+    border-right: 1px solid @background-color-5;
+}
+
+.repository .diff-file-box .code-diff tbody tr .removed-code {
+    background-color: inherit;
+}
+
+.repository .diff-file-box .code-diff tbody tr td.tag-code,
+.repository .diff-file-box .code-diff tbody tr.tag-code td {
+    background-color: @black !important;
+    border-color: @black !important;
+}
+
+.ui.vertical.menu .active.item {
+    background: @background-color-4;
+}
+
+.ui.vertical.menu .item {
+    background: @black;
+}
+
+.ui.vertical.menu .header.item {
+    background: @black;
+}
+
+.ui.vertical.menu {
+    background: @black;
+    border: 1px solid @background-color-5;
+}
+
+.ui.repository.list .item:not(:first-child) {
+    border-top: 1px solid @boldblack;
+}
+
+.ui .text.blue {
+    color: @blue !important;
+}
+
+.ui.selection.active.dropdown,
+.ui.selection.active.dropdown .menu {
+    border-color: @black;
+    box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+}
+
+.ui.selection.active.dropdown:hover,
+.ui.selection.active.dropdown:hover .menu {
+    border-color: @black;
+    box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+}
+
+.ui.selection.dropdown {
+    background: @black;
+    border: 1px solid @background-color-2;
+    color: @white;
+}
+
+.ui.menu .ui.dropdown .menu > .active.item {
+    color: @white !important;
+}
+
+.ui.tabular.menu {
+    border-bottom: 1px solid @boldblack;
+}
+
+.ui.card,
+.ui.cards > .card {
+    background: @background-color-2;
+    box-shadow: 0 1px 3px 0 @background-color-2, 0 0 0 1px @background-color-2;
+}
+
+.ui.card > .content > .header,
+.ui.cards > .card > .content > .header {
+    color: @white;
+}
+
+.ui.card > .extra a:not(.ui),
+.ui.cards > .card > .extra a:not(.ui) {
+    color: @blue;
+}
+
+.ui .text.black {
+    color: @white;
+}
+
+.ui .text.black:hover {
+    color: @white;
+}
+
+.ui.secondary.segment {
+    background: @background-color-2;
+}
+
+.ui.user.list .item:not(:first-child) {
+    border-top: 1px solid @boldblack;
+}
+
+.ui.secondary.pointing.menu .active.item:hover {
+    color: @white;
+    background: @black;
+}
+
+.ui.secondary.pointing.menu .dropdown.item:hover,
+.ui.secondary.pointing.menu .link.item:hover,
+.ui.secondary.pointing.menu a.item:hover {
+    color: @white;
+}
+
+.ui.checkbox label,
+.ui.checkbox + label,
+.ui.form .field > label {
+    color: @white;
+}
+
+.ui.form .inline.field > label,
+.ui.form .inline.field > p,
+.ui.form .inline.fields .field > label,
+.ui.form .inline.fields .field > p,
+.ui.form .inline.fields > label {
+    color: @white;
+}
+
+.user.settings .email.list .item:not(:first-child) {
+    border-top: 1px solid @boldblack;
+}
+
+.explore .navbar {
+    background-color: @background-color-5 !important;
+}
+
+.ui.menu.new-menu {
+    background-color: @background-color-5 !important;
+}
+
+@media only screen and (max-width: 1200px) {
+    .ui.menu.new-menu:after {
+        background-image:
+            linear-gradient(
+                to right,
+                rgba(42, 46, 42, 0),
+                @background-color-5 100%
+            );
+    }
+}
+
+.ui.secondary.pointing.menu .active.item {
+    border: 0;
+    background: @background-color-4;
+    color: @white;
+}
+
+.settings .key.list .item:not(:first-child) {
+    border-top: 1px solid @black;
+}
+
+.ui.attached.info.message,
+.ui.info.message {
+    box-shadow: 0 0 0 1px @background-color-1 inset, 0 0 0 0 transparent;
+}
+
+.ui.bottom.attached.message {
+    background-color: @green;
+    color: @blue;
+}
+
+.ui.bottom.attached.message .pull-right {
+    color: @blue;
+}
+
+.ui.info.message {
+    background-color: @background-color-4;
+    color: @white;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid @white;
+}
+
+.ui .warning.header {
+    background-color: @red !important;
+    border-color: @red;
+}
+
+.ui.red.message {
+    background-color: rgba(80, 23, 17, 0.6);
+    color: @boldred;
+    box-shadow: 0 0 0 1px rgba(121, 71, 66, 0.5) inset, 0 0 0 0 transparent;
+}
+
+.ui.red.button,
+.ui.red.buttons .button {
+    background-color: @red;
+}
+
+.ui.red.button:hover,
+.ui.red.buttons .button:hover {
+    background-color: @boldred;
+}
+
+.ui.basic.red.button:hover,
+.ui.basic.red.buttons .button:hover {
+    box-shadow: 0 0 0 1px @boldred inset !important;
+    color: @boldred !important;
+}
+
+.ui.checkbox label:hover,
+.ui.checkbox + label:hover {
+    color: @white !important;
+}
+
+.ui.checkbox .box:hover::before,
+.ui.checkbox label:hover::before {
+    background: @background-color-2;
+}
+
+.ui.checkbox .box:before,
+.ui.checkbox label:before {
+    background: @background-color-2;
+    border: 1px solid @black;
+}
+
+.ui.checkbox .box:active::before,
+.ui.checkbox label:active::before {
+    background: @background-color-2;
+    border-color: @black;
+}
+
+.ui.checkbox input:checked ~ .box:before,
+.ui.checkbox input:checked ~ label:before,
+.ui.radio.checkbox input:checked ~ .box:before,
+.ui.radio.checkbox input:checked ~ label:before {
+    border-color: @black;
+    background: @background-color-2;
+}
+
+.ui.checkbox input:focus ~ .box:before,
+.ui.checkbox input:focus ~ label:before {
+    border-color: @black;
+    background: @background-color-2;
+}
+
+.ui.checkbox input:checked:focus ~ .box:before,
+.ui.checkbox input:checked:focus ~ label:before,
+.ui.checkbox input:not([type="radio"]):indeterminate:focus ~ .box:before,
+.ui.checkbox input:not([type="radio"]):indeterminate:focus ~ label:before,
+.ui.radio.checkbox input:focus:checked ~ .box:before,
+.ui.radio.checkbox input:focus:checked ~ label:before {
+    border-color: @black;
+    background: @background-color-2;
+}
+
+.ui.checkbox input:checked ~ .box:after,
+.ui.checkbox input:checked ~ label:after {
+    opacity: 1;
+    color: @blue;
+}
+
+.ui.checkbox input:checked:focus ~ .box:after,
+.ui.checkbox input:checked:focus ~ label:after,
+.ui.checkbox input:not([type="radio"]):indeterminate:focus ~ .box:after,
+.ui.checkbox input:not([type="radio"]):indeterminate:focus ~ label:after {
+    color: @blue;
+}
+
+.ui.radio.checkbox input:checked ~ .box:after,
+.ui.radio.checkbox input:checked ~ label:after,
+.ui.radio.checkbox input:checked:focus ~ .box:after,
+.ui.radio.checkbox input:checked:focus ~ label:after {
+    background-color: @blue;
+}
+
+.ui.checkbox input:focus ~ .box:after,
+.ui.checkbox input:focus ~ label,
+.ui.checkbox input:focus ~ label:after {
+    color: @white;
+}
+
+.ui.selection.dropdown:hover {
+    border: 1px solid @background-color-5;
+}
+
+.ui.selection.dropdown .menu > .item {
+    border-top: 1px solid @black;
+}
+
+.settings .list > .item:not(:first-child) {
+    border-top: 1px solid @black;
+}
+
+.ui.selection.visible.dropdown > .text:not(.default) {
+    color: @white;
+}
+
+.ui.negative.message {
+    background-color: rgba(80, 23, 17, 0.6);
+    color: @boldred;
+    box-shadow: 0 0 0 1px rgba(121, 71, 66, 0.5) inset, 0 0 0 0 transparent;
+}
+
+.user.profile .ui.card .extra.content ul li:not(:last-child) {
+    border-bottom: 1px solid @boldblack;
+}
+
+.ui.form .dropzone {
+    border: 2px dashed @boldblack;
+}
+
+.ui.basic.red.button,
+.ui.basic.red.buttons .button {
+    box-shadow: 0 0 0 1px @red inset !important;
+    color: @red !important;
+}
+
+.ui.list .list > .item .header,
+.ui.list > .item .header {
+    color: @white;
+}
+
+.ui.list .list > .item .description,
+.ui.list > .item .description {
+    color: @white;
+}
+
+.ui.user.list .item .description a {
+    color: @blue;
+}
+
+.ui.user.list .item .description a:hover {
+    color: @boldblue;
+    text-decoration: none;
+}
+
+.ui.basic.blue.button:hover,
+.ui.basic.blue.buttons .button:hover {
+    box-shadow: 0 0 0 1px @blue inset !important;
+    color: @blue !important;
+}
+
+.ui.basic.blue.button:focus,
+.ui.basic.blue.buttons .button:focus {
+    box-shadow: 0 0 0 1px @blue inset !important;
+    color: @blue !important;
+}
+
+a.ui.label:hover,
+a.ui.labels .label:hover {
+    background-color: @background-color-2;
+    color: @white;
+}
+
+.repository .label.list .item {
+    border-bottom: 1px dashed @boldblack;
+}
+
+.repository .diff-detail-box ol li {
+    border-bottom: 1px dashed @black;
+}
+
+// TODO: fix diff colors
+.repository .diff-file-box .code-diff-split tbody tr.add-code td:nth-child(1),
+.repository .diff-file-box .code-diff-split tbody tr.add-code td:nth-child(2),
+.repository .diff-file-box .code-diff-split tbody tr.del-code td:nth-child(3),
+.repository .diff-file-box .code-diff-split tbody tr.del-code td:nth-child(4) {
+    background-color: @black;
+}
+
+.repository .diff-file-box .code-diff-split tbody tr td.add-code,
+.repository .diff-file-box .code-diff-split tbody tr.add-code td:nth-child(4),
+.repository .diff-file-box .code-diff-split tbody tr.add-code td:nth-child(5),
+.repository .diff-file-box .code-diff-split tbody tr.add-code td:nth-child(6) {
+    background-color: #283e2d !important;
+    border-color: #314a37 !important;
+}
+
+.repository .diff-file-box .code-diff-split tbody tr td.add-code,
+.repository .diff-file-box .code-diff-split tbody tr.add-code td:nth-child(3),
+.repository .diff-file-box .code-diff-split tbody tr.add-code td:nth-child(4) {
+    background-color: #283e2d !important;
+    border-color: #314a37 !important;
+}
+
+.repository .diff-file-box .code-diff-split tbody tr td.del-code,
+.repository .diff-file-box .code-diff-split tbody tr.del-code td:nth-child(1),
+.repository .diff-file-box .code-diff-split tbody tr.del-code td:nth-child(2) {
+    background-color: #3c2626 !important;
+    border-color: #634343 !important;
+}
+
+.ui.header .sub.header {
+    color: @white;
+}
+
+.ui.dividing.header {
+    border-bottom: 1px solid @boldblack;
+}
+
+.ui.modal {
+    background: @background-color-4;
+}
+
+.ui.modal > .header {
+    background: @background-color-3;
+    color: @white;
+}
+
+.ui.modal > .actions {
+    background: @background-color-3;
+    border-top: 1px solid @background-color-3;
+}
+
+.ui.modal > .content {
+    background: @background-color-4;
+}
+
+.ui.basic.blue.button,
+.ui.basic.blue.buttons .button {
+    box-shadow: 0 0 0 1px @blue inset !important;
+    color: @blue !important;
+}
+
+.editor-toolbar {
+    background-color: @black;
+    border: 1px solid @black !important;
+}
+
+.editor-toolbar a {
+    color: @blue !important;
+}
+
+.editor-toolbar a.active,
+.editor-toolbar a:hover {
+    background-color: @black !important;
+    border: 1px solid @black !important;
+    color: @boldblue !important;
+}
+
+.editor-toolbar.disabled-for-preview a:not(.no-disable) {
+    background-color: @black !important;
+    border: 1px solid @black !important;
+    color: @boldblack !important;
+}
+
+.repository.wiki.new .editor-preview {
+    background-color: @background-color-4;
+}
+
+.CodeMirror {
+    color: @white;
+    background-color: @background-color-4;
+    border-top: 0;
+    border: 1px solid @black;
+}
+
+.CodeMirror-gutters {
+    background-color: @background-color-4;
+    border-right: 1px solid @boldblack;
+}
+
+.repository .diff-detail-box {
+    background-color: @background-color-4;
+}
+
+.repository .diff-detail-box .detail-files {
+    background-color: inherit;
+}
+
+.comment-code-cloud .ui.attached.tabular.menu {
+    background: none transparent;
+    border: 0;
+}
+
+.comment-code-cloud .footer .markdown-info {
+    color: inherit;
+}
+
+.file-comment {
+    color: @boldblack;
+}
+
+.ui.comments .comment .author {
+    color: @white;
+}
+
+.ui.comments .comment .metadata {
+    color: @boldblack;
+}
+
+.ui.comments .comment .text {
+    color: @white;
+}
+
+.ui.green.button:active,
+.ui.green.buttons .button:active,
+.ui.green.button:focus,
+.ui.green.buttons .button:focus {
+    background-color: @blue !important;
+}
+
+.ui.horizontal.list .item .ui.blue.label,
+.ui.horizontal.list .item .ui.blue.labels .label {
+    background-color: @black !important;
+    border: none !important;
+}
+
+.ui.horizontal.list .item .ui.blue.label:hover {
+    color: @boldgreen !important;
+}
+
+.ui .text.gold {
+    color: @yellow;
+}
+
+.tag.text.blue a {
+    color: @magenta !important;
+}
+
+.tag.text.blue a:hover {
+    color: @boldmagenta !important;
+}
+
+.commit a,
+.commit-id,
+.ui.sha.label,
+a.ui.sha {
+    color: @green !important;
+}
+
+.commit a:hover,
+.commit-id:hover,
+.ui.sha.label:hover,
+a.ui.sha:hover {
+    color: @boldgreen !important;
+}
+
+.ui .text.purple {
+    color: @magenta !important;
+}
+
+.repository.release #release-list > li .detail .download .list li {
+    border-bottom: 1px solid @boldblack;
+}
+
+.repository.release #release-list > li .detail .download .list {
+    border-top: @boldblack;
+}
+
+.repository.release #release-list > li .detail {
+    border-left: 1px solid @boldblack;
+}
+
+.markdown:not(code) h1 {
+    border-bottom: 1px solid @boldblack;
+}
+
+.feeds .news code {
+    color: @magenta;
+}
+
+.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    color: @white;
+    -moz-tab-size: 4;
+    tab-size: 4;
+}
+
+.hljs-emphasis,
+.hljs-strong {
+    color: @white;
+}
+
+.hljs-bullet,
+.hljs-link,
+.hljs-quote,
+.hljs-regexp {
+    color: @blue;
+}
+
+.hljs-code,
+.hljs-selector-class {
+    color: @green;
+}
+
+.hljs-params {
+    color: @white;
+}
+
+.hljs-addition,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-symbol,
+.hljs-template-tag,
+.hljs-type {
+    color: @yellow;
+}
+
+.hljs-deletion,
+.hljs-meta {
+    color: @boldblack;
+}
+
+.hljs-selector-tag,
+.hljs-subst {
+    color: @magenta;
+}
+
+.hljs-attribute,
+.hljs-name,
+.hljs-tag {
+    color: @red;
+}
+
+.hljs-number,
+.hljs-tag .hljs-attr,
+.hljs-attr,
+.hljs-template-variable,
+.hljs-variable {
+    color: @magenta;
+}
+
+.hljs-section,
+.hljs-selector-id,
+.hljs-title {
+    color: @magenta;
+}
+
+.hljs-doctag,
+.hljs-keyword {
+    color: @yellow;
+}
+
+.hljs-string {
+    color: @blue;
+}
+
+.hljs-comment {
+    color: @boldblack;
+}
+
+.hljs-literal {
+    color: @red;
+}
+
+.markdown:not(code) p code,
+.markdown:not(code) tt {
+    color: @magenta;
+}
+
+.markdown:not(code) ul {
+    list-style: none;
+}
+
+.markdown:not(code) ul li::before {
+    content: "•";
+    color: @yellow;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.markdown:not(code) ol {
+    list-style: none;
+    counter-reset: li;
+}
+
+.markdown:not(code) ol li::before {
+    content: '.' counter(li);
+    color: @yellow;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1.5em;
+    margin-right: 0.5em;
+    text-align: right;
+    direction: rtl;
+}
+
+.markdown:not(code) ol li {
+    counter-increment: li;
+}
+
+.markdown:not(code) h1 .octicon-link,
+.markdown:not(code) h2 .octicon-link,
+.markdown:not(code) h3 .octicon-link,
+.markdown:not(code) h4 .octicon-link,
+.markdown:not(code) h5 .octicon-link,
+.markdown:not(code) h6 .octicon-link {
+    color: @white;
+}
+
+.repository.file.list #repo-files-table tbody .octicon.octicon-file-directory,
+.repository.file.list #repo-files-table tbody .octicon.octicon-file-submodule {
+    color: @green;
+}
+
+.repository.file.list #repo-files-table tbody .octicon {
+    color: @boldblack;
+}
+
+.repository.file.list #repo-files-table tr:hover {
+    background-color: @black;
+}
+
+.repository.file.list #repo-files-table tr {
+    background-color: @background-color-4;
+}
+
+.repository.file.list .non-diff-file-content .code-view .lines-code ol {
+    background-color: @background-color-4 !important;
+}
+
+.repository.file.list .non-diff-file-content .code-view .lines-num {
+    background-color: @background-color-5 !important;
+}
+
+.ui.attached.positive.message,
+.ui.positive.message {
+    -webkit-box-shadow: 0 0 0 1px @green inset, 0 0 0 0 transparent;
+    box-shadow: 0 0 0 1px @green inset, 0 0 0 0 transparent;
+}
+
+.ui.basic.green.button,
+.ui.basic.green.buttons .button {
+    -webkit-box-shadow: 0 0 0 1px @green inset !important;
+    box-shadow: 0 0 0 1px @green inset !important;
+    color: @green !important;
+}
+
+.ui.basic.green.button:active,
+.ui.basic.green.buttons .button:active {
+    -webkit-box-shadow: 0 0 0 1px @green inset !important;
+    box-shadow: 0 0 0 1px @green inset !important;
+    color: @green !important;
+}
+
+.ui.basic.green.button:hover,
+.ui.basic.green.buttons .button:hover {
+    -webkit-box-shadow: 0 0 0 1px @boldgreen inset !important;
+    box-shadow: 0 0 0 1px @boldgreen inset !important;
+    color: @boldgreen !important;
+}
+
+input[type="date"]::-webkit-clear-button {
+    display: none;
+}
+
+input[type="date"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    color: @blue;
+    background-color: @black !important;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    color: @boldblue;
+    background-color: @black !important;
+}
+
+.repository.file.editor .commit-form-wrapper .commit-form {
+    border: 1px solid @boldblack !important;
+}
+
+.repository.file.editor .commit-form-wrapper .commit-form:before,
+.repository.file.editor .commit-form-wrapper .commit-form:after {
+    border-right-color: @boldblack;
+}
+
+.repository.view.issue .comment-list .event > .octicon.issue-symbol {
+    background-color: @black;
+}
+
+.repository.view.issue .comment-list .event .octicon.octicon-circle-slash {
+    color: @magenta;
+}
+
+.repository.view.issue .comment-list .timeline-line:before {
+    background-color: @boldblack;
+}
+
+.repository.view.issue .comment-list .event > .octicon:not(.issue-symbol) {
+    text-shadow: -2px 0 @black, 0 2px @black, 2px 0 @black, 0 -2px @black;
+}
+
+.repository.view.issue .comment-list .event .octicon.octicon-primitive-dot {
+    color: @green;
+}
+
+div.ui.attached.segment.reactions > .ui.basic.blue.label {
+    background: none !important;
+    border: none;
+    color: @blue !important;
+}
+
+div.ui.attached.segment.reactions > .ui.basic.blue.label:hover {
+    background: none !important;
+    border: none;
+    color: @boldblue !important;
+}
+
+.ui.bottom.left.popup:before {
+    -webkit-box-shadow: -1px -1px 0 0 @background-color-4;
+    box-shadow: -1px -1px 0 0 @background-color-4;
+}
+
+.ui.bottom.popup:before {
+    background: @background-color-4;
+}
+
+.ui.popup {
+    border: 1px solid @black;
+    background: @background-color-4;
+    color: @white;
+}
+
+.ui .text.red {
+    color: @red !important;
+}
+
+.repository #commits-table td.sha .sha.label,
+.repository #repo-files-table .sha.label {
+    border: none !important;
+}
+
+.ui.warning.message {
+    color: @red;
+    background-color: @background-color-4;
+}
+
+.repository.view.issue .pull-desc code {
+    color: @magenta;
+}
+
+.ui.attached.warning.message,
+.ui.warning.message {
+    -webkit-box-shadow: 0 0 0 1px @background-color-1 inset, 0 0 0 0 transparent;
+    box-shadow: 0 0 0 1px @background-color-1 inset, 0 0 0 0 transparent;
+}
+
+.ui .text.green {
+    color: @green !important;
+}
+
+.repository .diff-box .header .count .bar .add {
+    background-color: @green;
+}
+
+.repository .diff-box .header .count .bar {
+    background-color: @red;
+}
+
+.repository.branches .commit-divergence .bar.bar-behind {
+    background-color: @red !important;
+}
+
+.repository.branches .commit-divergence .bar.bar-ahead {
+    background-color: @green !important;
+}
+
+.repository.branches .commit-divergence .bar-group:last-child {
+    border-left: 1px solid @boldblack;
+}
+
+#git-graph-container li a {
+    color: @green;
+}
+
+#git-graph-container li a:hover {
+    color: @boldgreen;
+    text-decoration: none;
+}
+
+.commit-list .commit-summary a.default-link:hover {
+    text-decoration: none !important;
+}
+
+.tag-code,
+.tag-code td {
+    border: 1px solid @black !important;
+}
+
+.repository.release #release-list > li .detail .dot {
+    background-color: @yellow;
+    border-color: @yellow;
+}
