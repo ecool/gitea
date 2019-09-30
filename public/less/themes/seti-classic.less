@@ -6,7 +6,7 @@ seti-classic theme file for gitea.
 
 // VARS (theme base16-seti-classic.mintty)
 @black:         #151718;
-@boldblack:     #41535b;
+@boldblack:     #41535B;
 @red:           #CD3F45;
 @boldred:       #FF7278;
 @green:         #9FCA56;
@@ -21,8 +21,6 @@ seti-classic theme file for gitea.
 @boldcyan:      #88FFF1;
 @white:         #D4D6D7;
 @boldwhite:     #FFFFFF;
-
-@text-color: @white;
 
 @background-color-1: @black;
 @background-color-2: #1D1F21;
@@ -471,11 +469,6 @@ a.ui.basic.green.label:hover {
     border: 1px solid @background-color-5;
     background: @black;
 }
-
-// .ui.table tbody tr {
-//     border-bottom: 1px solid @background-color-5;
-//     background: @black;
-// }
 
 .ui .text.grey {
     color: @boldblack !important;
@@ -1533,4 +1526,11 @@ div.ui.attached.segment.reactions > .ui.basic.blue.label:hover {
 .repository.release #release-list > li .detail .dot {
     background-color: @yellow;
     border-color: @yellow;
+}
+
+.ui.grey.label,
+.ui.grey.labels .label {
+    background-color: @boldblack !important;
+    border-color: @boldblack !important;
+    color: @boldwhite !important;
 }
